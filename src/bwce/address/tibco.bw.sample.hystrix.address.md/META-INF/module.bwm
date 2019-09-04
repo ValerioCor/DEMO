@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_QibWACHsEeieOudekaL4AA" targetNamespace="http://tns.tibco.com/bw/composite/tibco.bw.sample.hystrix.address.md" name="tibco.bw.sample.hystrix.address.md" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_quCuUiHsEeieOudekaL4AA" name="address" promote="ComponentgetAddress/address">
+    <sca:interface.wsdl xmi:id="_quCuViHsEeieOudekaL4AA" interface="http://xmlns.example.com/20180307044524PLT#wsdl.interface(address)"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_quIN4CHsEeieOudekaL4AA" name="RestService" path="/address" docBasePath="http://localhost:7777/tibco.bw.sample.hystrix.address.md" docResourcePath="Address" basePath="/" connector="tibco.bw.sample.hystrix.address.md.Address" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.sample.hystrix.address.md.getAddress-Address.json">
+      <operation xmi:id="_quI08CHsEeieOudekaL4AA" operationName="get" nickname="get-address" httpMethod="GET" responseStyle="element" requestStyle="element">
+        <parameters xmi:id="_C4EM4CHuEeieOudekaL4AA">
+          <parameterMapping xmi:id="_C4EM4SHuEeieOudekaL4AA" parameterName="customer" parameterType="Query" dataType="string"/>
+        </parameters>
+        <clientFormat>xml</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_ndnTwGAcEemMe8Di9lcpXQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_quI08SHsEeieOudekaL4AA" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_Q3fnECHsEeieOudekaL4AA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Q3rNQCHsEeieOudekaL4AA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Q3tCcCHsEeieOudekaL4AA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Q3yiACHsEeieOudekaL4AA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Q30-QCHsEeieOudekaL4AA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Q34BkCHsEeieOudekaL4AA" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_Q36d0CHsEeieOudekaL4AA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Voiz4CHvEeieOudekaL4AA" name="/Address/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Y3_LYCHvEeieOudekaL4AA" name="/Address/port" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_QfbUMGAxEemMe8Di9lcpXQ" name="/Address/city" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_Qst6cCHsEeieOudekaL4AA" name="ComponentgetAddress" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Qst6cSHsEeieOudekaL4AA" processName="tibco.bw.sample.hystrix.address.md.getAddress"/>
+    <sca:service xmi:id="_quCuUCHsEeieOudekaL4AA" name="address">
+      <sca:interface.wsdl xmi:id="_quCuUSHsEeieOudekaL4AA" interface="http://xmlns.example.com/20180307044524PLT#wsdl.interface(address)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

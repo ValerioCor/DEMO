@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/tibco.bw.sample.hystrix.address.md/Service Descriptors/tibco.bw.sample.hystrix.address.md.getAddress-Address.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/Address"
+}]}

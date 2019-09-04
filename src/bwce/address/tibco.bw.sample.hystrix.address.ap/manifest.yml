@@ -1,0 +1,14 @@
+---
+applications:
+- memory: "512M"
+  timeout: "60"
+  name: "tibco.bw.sample.hystrix.address.ap"
+  buildpack: "bwce_buildpack"
+env:
+  Address_port: "8080"
+  Address_host: "0.0.0.0"
+  BW_PROFILE: "CF"
+  Address_city: "Roma"
+  APP_CONFIG_PROFILE: "PCF"
+services:
+- "config-server"
