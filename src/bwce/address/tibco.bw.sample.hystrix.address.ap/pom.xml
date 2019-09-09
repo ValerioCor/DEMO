@@ -7,7 +7,7 @@
     <relativePath>../tibco.bw.sample.hystrix.address.ap.parent</relativePath>
   </parent-->
       <groupId>com.tibco.bw</groupId>
-    <artifactId>tibco.bw.sample.hystrix.address.ap.parent</artifactId>
+    <artifactId>tibco.bw.sample.hystrix.address.ap</artifactId>
     <version>1.0.0</version>
   <packaging>bwear</packaging>
   <properties>
