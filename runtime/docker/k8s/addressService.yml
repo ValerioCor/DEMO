@@ -5,8 +5,9 @@ metadata:
 spec:
   ports:
   - port: 30089
+    nodePort: 30089
     targetPort: 8083-port
     protocol: TCP
   selector:
     app: address 
-  type: LoadBalancer
+  type: NodePort
