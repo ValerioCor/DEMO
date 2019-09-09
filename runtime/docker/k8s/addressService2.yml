@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  name: addressservice  
+spec:
+  ports:
+  - name: 8083-port
+    port: 30078
+    nodePort: 30078
+    targetPort: 8083-port
+    protocol: TCP
+  selector:
+    app: address 
+  type: NodePort
