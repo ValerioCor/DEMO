@@ -30,4 +30,7 @@
       <sca:interface.wsdl xmi:id="_quCuUSHsEeieOudekaL4AA" interface="http://xmlns.example.com/20180307044524PLT#wsdl.interface(address)"/>
     </sca:service>
   </sca:component>
+  <sca:component xmi:id="__tWKMNMHEemwWc7OWoIDEg" name="ComponentActivator" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__tWxQNMHEemwWc7OWoIDEg" processName="tibco.bw.sample.hystrix.address.md.Activator"/>
+  </sca:component>
 </sca:composite>
