@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Service 
 metadata:
-  name: address-service  
+  name: addressservice  
 spec:
   ports:
-  - port: 30089
-    nodePort: 30089
+  - name: 8083-port
+    port: 30078
+    nodePort: 30078
     targetPort: 8083-port
     protocol: TCP
   selector:
