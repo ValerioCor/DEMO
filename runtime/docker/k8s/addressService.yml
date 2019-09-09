@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - port: 30089
-    targetPort: 8080-port
+    targetPort: 8083-port
     protocol: TCP
   selector:
     app: address 
