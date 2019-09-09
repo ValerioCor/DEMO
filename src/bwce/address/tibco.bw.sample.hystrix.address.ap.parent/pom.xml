@@ -5,7 +5,7 @@
   <groupId>com.tibco.bw</groupId>
   <artifactId>tibco.bw.sample.hystrix.address.ap.parent</artifactId>
   <version>1.0.0</version>
-  <packaging>pom</packaging>
+  <packaging>bwear</packaging>
   <modules>
     <module>../tibco.bw.sample.hystrix.address.md</module>
     <module>../tibco.bw.sample.hystrix.address.ap</module>
