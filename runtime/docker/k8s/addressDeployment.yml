@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: address
-        image: eu.gcr.io/warm-mediator-193214/address-app
+        image: valeriocordoni/address:1.0.0
         ports:
         - name: 8083-port
           containerPort: 8083
