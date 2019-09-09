@@ -18,8 +18,8 @@ spec:
       - name: address
         image: eu.gcr.io/warm-mediator-193214/address-app
         ports:
-        - name: 8080-port
-          containerPort: 8080
+        - name: 8083-port
+          containerPort: 8083
         envFrom:
         - configMapRef:
              name: config-env-file
