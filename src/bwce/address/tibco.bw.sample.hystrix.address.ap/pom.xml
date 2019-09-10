@@ -30,7 +30,7 @@
        <plugin>
 				<groupId>com.tibco.plugins</groupId>
 				<artifactId>bw6profile-maven-plugin</artifactId>
-				<version>0.0.2</version>
+				<version>0.0.3</version>
 				<configuration>
 					<sourceFile>${project.basedir}/profiles/Reference.substvar</sourceFile>
 					<destinationFolder>${project.basedir}/target</destinationFolder>
