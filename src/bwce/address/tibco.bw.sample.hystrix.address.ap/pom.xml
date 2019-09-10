@@ -27,6 +27,22 @@
         <version>2.1.1</version>
         <extensions>true</extensions>
       </plugin>
+       <plugin>
+				<groupId>com.tibco.plugins</groupId>
+				<artifactId>bw6profile-maven-plugin</artifactId>
+				<version>0.0.3</version>
+				<configuration>
+					<sourceFile>${project.basedir}/profiles/Reference.substvar</sourceFile>
+					<destinationFolder>${project.basedir}/target</destinationFolder>
+					<profileName>${ENV_NAME}.substvar</profileName>
+					<gvProperties>
+						<property>
+							<name>/VersionMetadata/ApplicationDeployTag</name>
+							<value>${JENKINS_BUILD_TAG}</value>
+						</property>
+					</gvProperties>
+				</configuration>
+			</plugin>	
     </plugins>
   </build>
   <reporting>
