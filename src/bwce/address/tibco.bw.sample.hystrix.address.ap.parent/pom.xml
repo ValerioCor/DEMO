@@ -7,6 +7,7 @@
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <modules>
+     <module>../tibco.bw.sample.common.log.sh</module>
     <module>../tibco.bw.sample.hystrix.address.md</module>
     <module>../tibco.bw.sample.hystrix.address.ap</module>
   </modules>
