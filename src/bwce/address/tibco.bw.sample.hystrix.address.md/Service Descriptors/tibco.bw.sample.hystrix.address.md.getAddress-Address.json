@@ -11,6 +11,7 @@
   "paths" : {
     "/address" : {
       "get" : {
+        "summary" : "",
         "description" : "",
         "operationId" : "get-address",
         "consumes" : [ "application/json" ],

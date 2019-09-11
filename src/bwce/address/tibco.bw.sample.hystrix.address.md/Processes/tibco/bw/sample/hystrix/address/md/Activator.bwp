@@ -9,6 +9,7 @@
     xmlns:ns0="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns1="http://tibco.com/bw/bw6/system/ModuleActivator"
     xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema"
+    xmlns:ns3="http://www.example.com/namespaces/tns/1568190159830"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -159,24 +160,18 @@
                 </complexContent>
             </complexType>
             <element name="ActivityTimedOutException" type="tns:ActivityTimedOutExceptionType"/>
+            <complexType name="DuplicateKeyExceptionType">
+                <complexContent>
+                    <extension base="tns:ActivityExceptionType">
+                        <sequence>
+                            <element name="duplicateKey" type="string"/>
+                            <element minOccurs="0" name="previousJobID" type="string"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
-        <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/pe/WriteToLogActivitySchema"
-            xmlns:tns="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:complexType name="LogParametersType">
-                <xs:sequence>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="msgCode" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="loggerName" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="logLevel" type="xs:string"/>
-                    <xs:element form="unqualified" name="message" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="ActivityInput" type="tns:LogParametersType"/>
-        </xs:schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20190909094447PLT"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
@@ -357,12 +352,12 @@
 
                                     <children type="3007">
 
-                                    <children type="4002 bw.generalactivities.log">
+                                    <children type="4002 bw.generalactivities.callprocess">
 
                                     <children type="4017">
 
                                     <styles
-                                    fontName="Cantarell"
+                                    fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
@@ -371,7 +366,7 @@
                                     <children type="4017">
 
                                     <styles
-                                    fontName="Cantarell"
+                                    fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
@@ -380,7 +375,7 @@
                                     <children type="4017">
 
                                     <styles
-                                    fontName="Cantarell"
+                                    fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
@@ -389,14 +384,14 @@
                                     <children type="4017">
 
                                     <styles
-                                    fontName="Cantarell"
+                                    fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles
-                                    fontName="Cantarell"
+                                    fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <styles
@@ -409,8 +404,8 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="194"
-                                    xsi:type="notation:Bounds" y="47"/>
+                                    x="112"
+                                    xsi:type="notation:Bounds" y="27"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -436,7 +431,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="131"
+                                    height="121"
                                     width="437" xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -456,7 +451,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="131"
+                                    height="121"
                                     width="440"
                                     x="15" xsi:type="notation:Bounds"/>
                                     </children>
@@ -472,7 +467,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="155"
+                                    height="145"
                                     width="480" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -532,7 +527,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="155"
+                                    height="164"
                                     width="542"
                                     x="2" xsi:type="notation:Bounds"/>
                                     </children>
@@ -728,7 +723,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="328" width="561" xsi:type="notation:Bounds"/>
+                                    height="336" width="561" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -789,6 +784,7 @@
             namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" namespace="http://tibco.com/bw/bw6/system/ModuleActivator"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1568190159830"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="ModuleActivator"
             partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="ModuleActivator"/>
@@ -800,7 +796,7 @@
             name="onStartup" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns1:onShutdownRequest"
             name="onShutdown" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:Log" name="LogActivator-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -826,31 +822,19 @@
                             <bpws:empty name="OnMessageEnd"
                                 tibex:constructor="onMessageEnd" tibex:xpdlId="36ec412a-9c91-4a0d-9af1-8b57db1f04a8"/>
                             <bpws:extensionActivity>
-                                <tibex:activityExtension
-                                    inputVariable="Log-input" name="Log"
-                                    tibex:xpdlId="c126a938-cb18-480f-946b-dd958a93b170" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                <tibex:extActivity
+                                    inputVariable="LogActivator-input"
+                                    name="LogActivator"
+                                    tibex:xpdlId="978c8323-a8bd-4058-829d-2424860a8b06"
+                                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;Application Strated no Problem&amp;quot;&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1568190159830&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;LogActivator-input&quot; match=&quot;/&quot;>&lt;tns:Log>&lt;tns:message>&lt;xsl:value-of select=&quot;&amp;quot;Application Started no Problem&amp;quot;&quot;/>&lt;/tns:message>&lt;tns:mesgCode>&lt;xsl:value-of select=&quot;&amp;quot;ok&amp;quot;&quot;/>&lt;/tns:mesgCode>&lt;/tns:Log>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                </tibex:activityExtension>
+                                    <tibex:CallProcess
+                                    moduleRef="tibco.bw.sample.common.log.sh"
+                                    subProcessName="tibco.bw.sample.common.log.sh.log" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                </tibex:extActivity>
                             </bpws:extensionActivity>
                         </bpws:flow>
                     </bpws:scope>

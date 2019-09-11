@@ -13,6 +13,7 @@ TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 TIBCO-BWCE-Edition-Target: docker
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=tibco.bw.sample.common.log.sh)(version=1.0.0))",
  com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.httpconnector)",
  com.tibco.bw.binding.model; filter:="(name=bw.rest)"
