@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ${JOB_NAME}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        build_number: ${BUILD_NUMBER}
+        app: ${JOB_NAME}
+        role: rolling-update
+    spec:
+      containers:
+      - name: ${JOB_NAME}-container        
+        image: ${REGISTRY}/${JOB_NAME}:${BUILD_NUMBER}
+        ports:
+        - containerPort: ${PORT}
+        envFrom:
+            - configMapRef:
+                name: ${CONFIG_FILE}
