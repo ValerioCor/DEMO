@@ -73,7 +73,7 @@
 						<value>reportFilePosition=${reportFilePosition}</value>
 					</projectProperties>
 					<testCaseProperty/-->
-					<testSuite>address</testSuite--> 
+					<testSuite>address</testSuite> 
 
 				</configuration>
 			</plugin>
