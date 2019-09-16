@@ -72,8 +72,8 @@
 						<value>host=${soapui_testHost}</value>
 						<value>reportFilePosition=${reportFilePosition}</value>
 					</projectProperties>
-					<testCaseProperty/>
-					<testSuite>${Test_Kind}</testSuite--> 
+					<testCaseProperty/-->
+					<testSuite>address</testSuite--> 
 
 				</configuration>
 			</plugin>
