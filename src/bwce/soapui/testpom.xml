@@ -50,37 +50,7 @@
 					<artifactId>soapui-maven-plugin</artifactId>
 					<version>5.4.0</version>
 				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>properties-maven-plugin</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<quiet>true</quiet>
-						<!--files>
-							<file>${project.basedir}/../../../env/${ENV_NAME}.properties</file>
-							<file>${project.basedir}/../../env/${ENV_NAME}.properties</file>
-							<file>${project.basedir}/env/${ENV_NAME}.properties</file>
-						</files-->
-						<properties>
-						</properties>
-					</configuration>
-					<executions>
-						<execution>
-							<id>read-build-properties</id>
-							<phase>initialize</phase>
-							<goals>
-								<goal>read-project-properties</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>set-system-properties</id>
-							<phase>initialize</phase>
-							<goals>
-								<goal>set-system-properties</goal>
-							</goals>
-						</execution>
-					</executions>	
-				</plugin>
+				
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -89,7 +59,7 @@
 				<artifactId>soapui-maven-plugin</artifactId>
 				<version>5.4.0</version>
 				<configuration>
-					<projectFile>/tmp/../../tests/soapui/${APPLICATION_NAME}-soapui.xml</projectFile>
+					<projectFile>/tmp/Data/DEMO/src/bwce/soapui/{APPLICATION_NAME}-soapui.xml</projectFile>
 					<outputFolder>${project.build.directory}/reports</outputFolder>
 					<junitReport>true</junitReport>
 					<projectProperties>
@@ -102,38 +72,9 @@
 						<value>host=${soapui_testHost}</value>
 						<value>reportFilePosition=${reportFilePosition}</value>
 					</projectProperties>
-					<testCaseProperty/>
-					<testSuite>${Test_Kind}</testSuite> 
-					<soapuiProperties>
-						<property>
-							<name>soapui.properties.NoJWTTC</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}NoJWTTC.properties</value>
-						</property>
-						<property>
-							<name>soapui.properties.K48TC</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}K48TC.properties</value>
-						</property>
-						<property>
-							<name>soapui.properties.K49TC</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}K49TC.properties</value>
-						</property>
-						<property>
-							<name>soapui.properties.NoAssertmentMainDeTC</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}NoAssertmentMainDeTC.properties</value>
-						</property>
-						<property>
-							<name>soapui.properties.SearchDocumentByScrollAPI</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}SearchDocumentByScrollAPI.properties</value>
-						</property>
-						<property>
-							<name>soapui.properties.ELSCreateAssortmentTC</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}ELSCreateAssortmentTC.properties</value>
-						</property>
-						<property>
-							<name>soapui.properties.ELSDeleteAssortmentTC</name>
-							<value>${Test_properties_FolderPath}esbassortmentsservice/${ENV_NAME}ELSDeleteAssortmentTC.properties</value>
-						</property>
-					</soapuiProperties>
+					<!--testCaseProperty/>
+					<testSuite>${Test_Kind}</testSuite--> 
+
 				</configuration>
 			</plugin>
 		</plugins>
