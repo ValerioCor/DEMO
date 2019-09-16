@@ -62,7 +62,7 @@
 					<projectFile>/tmp/Data/DEMO/src/bwce/soapui/{APPLICATION_NAME}-soapui.xml</projectFile>
 					<outputFolder>${project.build.directory}/reports</outputFolder>
 					<junitReport>true</junitReport>
-					<projectProperties>
+					<!--projectProperties>
 						<value>basePath=${testBasePath}</value>
 						<value>message=soapui tests via Maven.</value>
 						<value>JenkinsJobCorrelationID=${BUILD_DISPLAY_NAME}</value>
@@ -72,7 +72,7 @@
 						<value>host=${soapui_testHost}</value>
 						<value>reportFilePosition=${reportFilePosition}</value>
 					</projectProperties>
-					<!--testCaseProperty/>
+					<testCaseProperty/>
 					<testSuite>${Test_Kind}</testSuite--> 
 
 				</configuration>
