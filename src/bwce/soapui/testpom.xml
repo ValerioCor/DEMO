@@ -56,11 +56,11 @@
 					<version>1.0.0</version>
 					<configuration>
 						<quiet>true</quiet>
-						<files>
+						<!--files>
 							<file>${project.basedir}/../../../env/${ENV_NAME}.properties</file>
 							<file>${project.basedir}/../../env/${ENV_NAME}.properties</file>
 							<file>${project.basedir}/env/${ENV_NAME}.properties</file>
-						</files>
+						</files-->
 						<properties>
 						</properties>
 					</configuration>
@@ -89,7 +89,7 @@
 				<artifactId>soapui-maven-plugin</artifactId>
 				<version>5.4.0</version>
 				<configuration>
-					<projectFile>${project.basedir}/../../tests/soapui/${APPLICATION_NAME}-soapui.xml</projectFile>
+					<projectFile>/tmp/../../tests/soapui/${APPLICATION_NAME}-soapui.xml</projectFile>
 					<outputFolder>${project.build.directory}/reports</outputFolder>
 					<junitReport>true</junitReport>
 					<projectProperties>
