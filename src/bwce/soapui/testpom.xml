@@ -59,7 +59,7 @@
 				<artifactId>soapui-maven-plugin</artifactId>
 				<version>5.4.0</version>
 				<configuration>
-					<projectFile>/tmp/Data/DEMO/src/bwce/soapui/${APPLICATION_NAME}-soapui.xml</projectFile>
+					<projectFile>/tmp/Data/DEMO/src/bwce/soapui/tibco-bw-sample-hystrix-address-ap-soapui.xml-soapui.xml</projectFile>
 					<outputFolder>${project.build.directory}/reports</outputFolder>
 					<junitReport>true</junitReport>
 					<!--projectProperties>
