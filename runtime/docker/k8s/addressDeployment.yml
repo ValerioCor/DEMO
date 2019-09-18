@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: address
-        image: valeriocordoni/addresses:1.0.0
+        image: valeriocordoni/addresses:1.0.${BUILD_NUMBER}
         ports:
         - name: 8083-port
           containerPort: 8083
